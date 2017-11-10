@@ -48,6 +48,11 @@ $ nsp check --reporter checkstyle
 ```
 Please note that in case of naming conflicts built-in reporters (as listed above) take precedence. For instance, `nsp-reporter-json` would never be used since nsp ships with a `json` formatter.
 
+Scoped reporters must be referenced by full name:
+```
+$ nsp check --reporter @scope/nsp-reporter-checkstyle
+```
+
 ### Creating a reporter
 
 A custom reporter should be a module named with the prefix `nsp-reporter-`, it must export two functions at minimum `error` and `success`.
